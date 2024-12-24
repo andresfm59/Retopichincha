@@ -4,7 +4,7 @@ import com.example.retopichincha.domain.model.RecipesListModel
 import com.example.retopichincha.domain.repository.RecipesRepository
 import javax.inject.Inject
 
-class GetRecipesUseCase @Inject constructor(
+open class GetRecipesUseCase @Inject constructor(
     private val repository: RecipesRepository
 ) {
     suspend operator fun invoke(): RecipesListModel? {

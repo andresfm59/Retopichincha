@@ -21,7 +21,8 @@ class FavoriteAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeFavoriteViewHolder {
-        val binding = ItemFavoriteRecipeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemFavoriteRecipeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return RecipeFavoriteViewHolder(binding)
     }
 
@@ -40,14 +41,14 @@ class FavoriteAdapter(
             binding.recipe = recipe
 
             Glide.with(binding.root.context)
-                .load(recipe.image) // Aquí usas la URL de la imagen que tienes en tu modelo
-                .into(binding.recipeImage) // Aquí va el ImageView en el layout
+                .load(recipe.image)
+                .into(binding.recipeImage)
 
             binding.favoriteButton.setOnClickListener {
-                onFavoriteClick(recipe) // Llamada para marcar o desmarcar como favorito
+                onFavoriteClick(recipe)
             }
             binding.root.setOnClickListener {
-                onItemClick(recipe) // Llamada para navegar a los detalles de la receta
+                onItemClick(recipe)
             }
         }
     }

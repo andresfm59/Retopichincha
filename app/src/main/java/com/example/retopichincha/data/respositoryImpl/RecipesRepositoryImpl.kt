@@ -20,6 +20,6 @@ class RecipesRepositoryImpl @Inject constructor(private val apiService: RecipesA
             .onFailure {
                 Log.i("Compilado - Impl", "Ha ocurrido un error: ${it.message}")
             }
-            .getOrNull() // Retorna el valor en caso de éxito, o null en caso de error
+            .getOrNull()
     }
 }

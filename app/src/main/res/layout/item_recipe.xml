@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
+        android:background="@drawable/rounded_background"
         android:layout_marginBottom="8dp">
 
         <ImageView
@@ -25,6 +26,7 @@
             android:layout_height="wrap_content"
             android:text="@{recipe.name}"
             android:textStyle="bold"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:layout_marginTop="8dp" />
 
@@ -32,6 +34,7 @@
             android:id="@+id/recipeDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
             android:text="@{recipe.description}"
             android:layout_marginTop="4dp" />
 

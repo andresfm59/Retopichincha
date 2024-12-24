@@ -81,7 +81,7 @@ class RecipesListFragment : Fragment() {
         binding.favoriteRecipesRecyclerView.apply {
             layoutManager = LinearLayoutManager(
                 requireContext(),
-                LinearLayoutManager.HORIZONTAL, // Cambiar a diseño horizontal
+                LinearLayoutManager.HORIZONTAL,
                 false
             )
             adapter = favoriteAdapter
@@ -92,10 +92,10 @@ class RecipesListFragment : Fragment() {
             adapter = recipeAdapter
         }
 
-        binding.favoriteRecipesRecyclerView.apply {
+       /* binding.favoriteRecipesRecyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = favoriteAdapter
-        }
+        }*/
     }
 
     private fun observeViewModel() {

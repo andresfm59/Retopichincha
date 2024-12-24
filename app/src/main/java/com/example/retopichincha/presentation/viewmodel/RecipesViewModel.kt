@@ -31,7 +31,7 @@ class RecipesViewModel @Inject constructor(
         loadFavoriteRecipes()
     }
 
-    private fun getRecipes() {
+    fun getRecipes() {
         viewModelScope.launch {
             _state.value = RecipesListState.Loading
             val result = withContext(Dispatchers.IO) { getRecipesUseCase() }
