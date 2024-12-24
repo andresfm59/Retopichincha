@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Retopichincha</string>
+    <string name="app_name">Reto Pichincha</string>
+    <string name="onboarding_title">Título de Onboarding</string>
+    <string name="onboarding_description">Descripción de Onboarding</string>
+    <string name="next">Siguiente</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
