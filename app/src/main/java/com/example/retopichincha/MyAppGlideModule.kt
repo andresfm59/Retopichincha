@@ -1,4 +1,4 @@
-package com.example.retopichincha.presentation
+package com.example.retopichincha
 
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.module.AppGlideModule

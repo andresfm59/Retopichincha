@@ -4,6 +4,7 @@ package com.example.retopichincha.presentation.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.retopichincha.databinding.ItemRecipeBinding
 import com.example.retopichincha.domain.model.RecipesModel
 
@@ -36,6 +37,11 @@ class RecipeAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(recipe: RecipesModel) {
             binding.recipe = recipe
+
+            Glide.with(binding.root.context)
+                .load(recipe.image) // Aquí usas la URL de la imagen que tienes en tu modelo
+                .into(binding.recipeImage) // Aquí va el ImageView en el layout
+
             binding.favoriteButton.setOnClickListener {
                 onFavoriteClick(recipe) // Llamada para marcar o desmarcar como favorito
             }
