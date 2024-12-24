@@ -91,11 +91,6 @@ class RecipesListFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = recipeAdapter
         }
-
-       /* binding.favoriteRecipesRecyclerView.apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            adapter = favoriteAdapter
-        }*/
     }
 
     private fun observeViewModel() {
