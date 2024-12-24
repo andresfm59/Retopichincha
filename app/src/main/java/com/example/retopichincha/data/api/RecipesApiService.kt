@@ -6,5 +6,4 @@ import retrofit2.http.GET
 interface RecipesApiService {
         @GET("/recetas")
         suspend fun getRecipes(): RecipesListResponse
-
 }

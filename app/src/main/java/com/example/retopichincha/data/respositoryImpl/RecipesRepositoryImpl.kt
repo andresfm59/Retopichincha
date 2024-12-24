@@ -10,15 +10,16 @@ class RecipesRepositoryImpl @Inject constructor(private val apiService: RecipesA
     RecipesRepository {
 
     override suspend fun getRecipes(): RecipesListModel? {
-        runCatching {
-            apiService.getRecipes().recipes.map { it.toDomain() }
+        return runCatching {
+            val recipes = apiService.getRecipes().recipes.map { it.toDomain() }
+            RecipesListModel(recipes) // Asegúrate de empaquetarlo en un RecipesListModel
         }
             .onSuccess { recipesListModel ->
-                Log.i("Compilado - Impl", "$recipesListModel")
+                Log.i("Compilado - Impl", "Recetas obtenidas: $recipesListModel")
             }
             .onFailure {
-                Log.i("Compilado - Impl", "Ha ocurrido un error ${it.message}")
+                Log.i("Compilado - Impl", "Ha ocurrido un error: ${it.message}")
             }
-        return null
+            .getOrNull() // Retorna el valor en caso de éxito, o null en caso de error
     }
 }

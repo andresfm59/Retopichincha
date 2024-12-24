@@ -1,38 +1,39 @@
 package com.example.retopichincha.presentation.adapter
 
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.retopichincha.databinding.ItemRecipeBinding
+import com.example.retopichincha.databinding.ItemFavoriteRecipeBinding
 import com.example.retopichincha.domain.model.RecipesModel
 
-class RecipeAdapter(
+
+class FavoriteAdapter(
     private val onFavoriteClick: (RecipesModel) -> Unit,
     private val onItemClick: (RecipesModel) -> Unit
-) : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
+) : RecyclerView.Adapter<FavoriteAdapter.RecipeFavoriteViewHolder>() {
 
     private var recipesList: List<RecipesModel> = emptyList()
 
-    fun submitList(recipes: List<RecipesModel>) {
-        recipesList = recipes
+    fun submitFavoriteList(favorites: List<RecipesModel>) {
+        recipesList = favorites
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
-        val binding = ItemRecipeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return RecipeViewHolder(binding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeFavoriteViewHolder {
+        val binding = ItemFavoriteRecipeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return RecipeFavoriteViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FavoriteAdapter.RecipeFavoriteViewHolder, position: Int) {
         val recipe =
             recipesList[position]
         holder.bind(recipe)
     }
 
+
     override fun getItemCount(): Int = recipesList.size
 
-    inner class RecipeViewHolder(private val binding: ItemRecipeBinding) :
+    inner class RecipeFavoriteViewHolder(private val binding: ItemFavoriteRecipeBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(recipe: RecipesModel) {
             binding.recipe = recipe

@@ -1,11 +1,14 @@
 package com.example.retopichincha.data.api.network
 
+import android.content.Context
+import android.content.SharedPreferences
 import com.example.retopichincha.data.api.RecipesApiService
 import com.example.retopichincha.data.respositoryImpl.RecipesRepositoryImpl
 import com.example.retopichincha.domain.repository.RecipesRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -43,5 +46,10 @@ object NetworkModule {
     @Provides
     fun RecipesRepository(apiService: RecipesApiService): RecipesRepository {
         return RecipesRepositoryImpl(apiService)
+    }
+
+    @Provides
+    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
+        return context.getSharedPreferences("my_preferences", Context.MODE_PRIVATE)
     }
 }
