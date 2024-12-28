@@ -12,7 +12,7 @@ class RecipesRepositoryImpl @Inject constructor(private val apiService: RecipesA
     override suspend fun getRecipes(): RecipesListModel? {
         return runCatching {
             val recipes = apiService.getRecipes().recipes.map { it.toDomain() }
-            RecipesListModel(recipes) // Asegúrate de empaquetarlo en un RecipesListModel
+            RecipesListModel(recipes)
         }
             .onSuccess { recipesListModel ->
                 Log.i("Compilado - Impl", "Recetas obtenidas: $recipesListModel")
