@@ -36,7 +36,7 @@ object NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit
             .Builder()
-            .baseUrl("http://192.168.1.37:3080/")
+            .baseUrl("https://run.mocky.io/v3/")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
