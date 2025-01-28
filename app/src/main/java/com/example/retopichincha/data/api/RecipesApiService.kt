@@ -4,6 +4,6 @@ import com.example.retopichincha.data.api.network.response.RecipesListResponse
 import retrofit2.http.GET
 
 interface RecipesApiService {
-        @GET("c0643a83-c948-485f-a3d4-fb400b44cb5b")
+        @GET("4afef549-6d4a-4992-94bd-aae4e4793d52")
         suspend fun getRecipes(): RecipesListResponse
 }
